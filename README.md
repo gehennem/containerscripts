@@ -6,13 +6,13 @@ ssh-keygen -o -p -f id_rsa -a 1000
 
 
 
-# .bash_ansible_aliases
+ # .bash_ansible_aliases
 alias docker-ansible-cli='sudo /bin/docker run --rm -it -v ~/.profile:/srv/ansible/.profile -v /srv/ansible:/srv/ansible -v ~/.ssh:/root/.ssh -v /etc/hosts:/etc/hosts --workdir=/srv/ansible willhallonline/ansible /bin/ash .profile'
 
-# .profile
-# Append "$1" to $PATH when not already in.
-# Append "$1" to $PATH when not already in.
-# Copied from Arch Linux, see #12803 for details.
+ # .profile
+         # Append "$1" to $PATH when not already in.
+         # Append "$1" to $PATH when not already in.
+         # Copied from Arch Linux, see #12803 for details.
 append_path () {
         case ":$PATH:" in
                 *:"$1":*)
@@ -36,13 +36,13 @@ export PATH
 export PAGER=less
 umask 022
 
-# use nicer PS1 for bash and busybox ash
+        # use nicer PS1 for bash and busybox ash
 if [ -n "$BASH_VERSION" -o "$BB_ASH_VERSION" ]; then
         PS1='\h:\w\$ '
-# use nicer PS1 for zsh
+        # use nicer PS1 for zsh
 elif [ -n "$ZSH_VERSION" ]; then
         PS1='%m:%~%# '
-# set up fallback default PS1
+        # set up fallback default PS1
 else
         : "${HOSTNAME:=$(hostname)}"
         PS1='${HOSTNAME%%.*}:$PWD'
